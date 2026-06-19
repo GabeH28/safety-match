@@ -59,7 +59,7 @@
     min-height: 92vh;
     display: flex; align-items: center;
     overflow: hidden;
-    background: linear-gradient(rgba(7,7,11,.45), rgba(7,7,11,.9)), url('Photos/banner.jpg') center 28%/cover no-repeat;
+    background: url('Photos/banner.jpg') center 28%/cover no-repeat;
   }
   .blob {
     position: absolute; border-radius: 50%;
@@ -76,10 +76,11 @@
   .hero .wrap { position: relative; z-index: 2; }
   .hero h1 {
     font-family: 'Acier BAT Text', 'Anton', sans-serif;
-    font-size: clamp(60px, 17vw, 190px);
+    font-size: clamp(30px, 13vw, 160px);
     font-weight: 400;
     line-height: .92;
     letter-spacing: .01em;
+    white-space: nowrap;
     background: url('Photos/banner.jpg') center 30% / cover;
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
@@ -182,7 +183,7 @@
   <div class="blob b"></div>
   <div class="blob c"></div>
   <div class="wrap">
-    <h1>SAFETY<br>MATCH</h1>
+    <h1>SAFETY MATCH</h1>
     <div class="cta">
       <a class="btn primary" href="#music">Listen</a>
       <a class="btn ghost" href="#shows">Live Dates</a>
