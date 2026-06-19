@@ -36,7 +36,8 @@
     border-bottom: 1px solid var(--line);
   }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; width: min(1000px,90vw); }
-  .brand { font-weight: 800; letter-spacing: .18em; font-size: 14px; text-transform: uppercase; }
+  .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: .18em; font-size: 14px; text-transform: uppercase; }
+  .brand img { width: 40px; height: 40px; border-radius: 50%; background: #fff; padding: 2px; box-shadow: 0 0 18px rgba(255,46,126,.35); }
   .navlinks { display: flex; gap: 26px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
   .navlinks a:hover { color: var(--ink); }
   @media (max-width: 640px) { .navlinks { display: none; } }
@@ -151,7 +152,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand">Safety&nbsp;Match</div>
+    <a class="brand" href="#"><img src="logo1.png" alt="Safety Match logo"><span>Safety&nbsp;Match</span></a>
     <div class="navlinks">
       <a href="#shows">Shows</a>
       <a href="#music">Music</a>
