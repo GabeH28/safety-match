@@ -81,11 +81,23 @@
     line-height: .92;
     letter-spacing: .01em;
     white-space: nowrap;
-    /* translucent white fill with a glass edge */
+    position: relative;
+    z-index: 0;
+    /* sharp glass edge at 50% opacity */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.6px rgba(255,255,255,.5);
+    text-stroke: 1.6px rgba(255,255,255,.5);
+  }
+  /* slightly-blurred translucent white fill sitting behind the stroke */
+  .hero h1::before {
+    content: attr(data-text);
+    position: absolute; left: 0; top: 0;
+    z-index: -1;
     color: rgba(255,255,255,.4);
     -webkit-text-fill-color: rgba(255,255,255,.4);
-    -webkit-text-stroke: 1.6px rgba(255,255,255,.82);
-    text-stroke: 1.6px rgba(255,255,255,.82);
+    -webkit-text-stroke: 0;
+    filter: blur(2px);
   }
   .hero .tag {
     margin-top: 22px; font-size: clamp(15px,2.2vw,20px);
@@ -184,7 +196,7 @@
   <div class="blob b"></div>
   <div class="blob c"></div>
   <div class="wrap">
-    <h1>SAFETY MATCH</h1>
+    <h1 data-text="SAFETY MATCH">SAFETY MATCH</h1>
     <div class="cta">
       <a class="btn primary" href="#music">Listen</a>
       <a class="btn ghost" href="#shows">Live Dates</a>
