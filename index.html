@@ -80,7 +80,10 @@
     font-weight: 400;
     line-height: .92;
     letter-spacing: .01em;
-    color: var(--ink);
+    background: url('Photos/banner.jpg') center 30% / cover;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    filter: drop-shadow(0 3px 18px rgba(0,0,0,.55));
   }
   .hero .tag {
     margin-top: 22px; font-size: clamp(15px,2.2vw,20px);
