@@ -81,20 +81,9 @@
     line-height: .92;
     letter-spacing: .01em;
     white-space: nowrap;
-    /* glassy sheen highlight over a blurred (frosted) image fill */
-    background:
-      linear-gradient(115deg,
-        rgba(255,255,255,0) 32%,
-        rgba(255,255,255,.5) 47%,
-        rgba(255,255,255,.08) 54%,
-        rgba(255,255,255,0) 70%),
-      url('Photos/banner-blur.jpg');
-    background-size: 250% 100%, cover;
-    background-position: 120% 0, center 30%;
-    background-repeat: no-repeat, no-repeat;
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent; color: transparent;
-    /* glass edge */
+    /* translucent white fill with a glass edge */
+    color: rgba(255,255,255,.4);
+    -webkit-text-fill-color: rgba(255,255,255,.4);
     -webkit-text-stroke: 1.6px rgba(255,255,255,.82);
     text-stroke: 1.6px rgba(255,255,255,.82);
   }
@@ -276,17 +265,4 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // Move the title's reflective sheen based on scroll position
-  var title = document.querySelector('.hero h1');
-  var ticking = false;
-  function updateSheen() {
-    var p = Math.min(window.scrollY / window.innerHeight, 1); // 0 at top -> 1 after one screen
-    title.style.backgroundPosition = (120 - p * 170) + '% 0, center 30%'; // sweep sheen; hold image
-    ticking = false;
-  }
-  window.addEventListener('scroll', function () {
-    if (!ticking) { requestAnimationFrame(updateSheen); ticking = true; }
-  }, { passive: true });
-  updateSheen();
 </script>
