@@ -87,8 +87,8 @@
       rgba(255,255,255,.5) 47%,
       rgba(255,255,255,.08) 54%,
       rgba(255,255,255,0) 70%);
-    background-size: 100% 100%;
-    background-position: 50% 0;
+    background-size: 250% 100%;
+    background-position: 120% 0;
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
     /* glass edge */
@@ -278,4 +278,17 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Move the title's reflective sheen based on scroll position
+  var title = document.querySelector('.hero h1');
+  var ticking = false;
+  function updateSheen() {
+    var p = Math.min(window.scrollY / window.innerHeight, 1); // 0 at top -> 1 after one screen
+    title.style.backgroundPosition = (120 - p * 170) + '% 0';   // sweeps 120% -> -50%
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(updateSheen); ticking = true; }
+  }, { passive: true });
+  updateSheen();
 </script>
