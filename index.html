@@ -81,24 +81,22 @@
     line-height: .92;
     letter-spacing: .01em;
     white-space: nowrap;
-    /* glassy reflective sheen sweeping across the clear letters */
-    background: linear-gradient(115deg,
-      rgba(255,255,255,0) 32%,
-      rgba(255,255,255,.5) 47%,
-      rgba(255,255,255,.08) 54%,
-      rgba(255,255,255,0) 70%);
-    background-size: 250% 100%;
-    background-position: 120% 0;
+    /* glassy sheen highlight over a blurred (frosted) image fill */
+    background:
+      linear-gradient(115deg,
+        rgba(255,255,255,0) 32%,
+        rgba(255,255,255,.5) 47%,
+        rgba(255,255,255,.08) 54%,
+        rgba(255,255,255,0) 70%),
+      url('Photos/banner-blur.jpg');
+    background-size: 250% 100%, cover;
+    background-position: 120% 0, center 30%;
+    background-repeat: no-repeat, no-repeat;
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
     /* glass edge */
     -webkit-text-stroke: 1.6px rgba(255,255,255,.82);
     text-stroke: 1.6px rgba(255,255,255,.82);
-    /* layered glow: white core -> gold -> ember */
-    filter:
-      drop-shadow(0 0 9px rgba(255,255,255,.5))
-      drop-shadow(0 0 24px rgba(247,183,51,.6))
-      drop-shadow(0 0 46px rgba(241,89,42,.55));
   }
   .hero .tag {
     margin-top: 22px; font-size: clamp(15px,2.2vw,20px);
@@ -284,7 +282,7 @@
   var ticking = false;
   function updateSheen() {
     var p = Math.min(window.scrollY / window.innerHeight, 1); // 0 at top -> 1 after one screen
-    title.style.backgroundPosition = (120 - p * 170) + '% 0';   // sweeps 120% -> -50%
+    title.style.backgroundPosition = (120 - p * 170) + '% 0, center 30%'; // sweep sheen; hold image
     ticking = false;
   }
   window.addEventListener('scroll', function () {
