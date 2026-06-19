@@ -37,7 +37,7 @@
   }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; width: min(1000px,90vw); }
   .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: .18em; font-size: 14px; text-transform: uppercase; }
-  .brand img { width: 40px; height: 40px; border-radius: 50%; background: #fff; padding: 2px; box-shadow: 0 0 18px rgba(255,46,126,.35); }
+  .brand img { width: 46px; height: 46px; filter: drop-shadow(0 0 10px rgba(255,46,126,.45)); }
   .navlinks { display: flex; gap: 26px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
   .navlinks a:hover { color: var(--ink); }
   @media (max-width: 640px) { .navlinks { display: none; } }
@@ -45,13 +45,14 @@
   /* hero */
   header.hero {
     position: relative;
-    min-height: 86vh;
+    min-height: 92vh;
     display: flex; align-items: center;
     overflow: hidden;
+    background: linear-gradient(rgba(7,7,11,.45), rgba(7,7,11,.9)), url('Photos/banner.jpg') center 28%/cover no-repeat;
   }
   .blob {
     position: absolute; border-radius: 50%;
-    filter: blur(80px); opacity: .55; z-index: 0;
+    filter: blur(80px); opacity: .3; z-index: 0;
     animation: float 14s ease-in-out infinite;
   }
   .blob.a { width: 460px; height: 460px; background: var(--c1); top: -120px; left: -80px; }
@@ -152,7 +153,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#"><img src="logo1.png" alt="Safety Match logo"><span>Safety&nbsp;Match</span></a>
+    <a class="brand" href="#"><img src="inverted-logo.png" alt="Safety Match logo"><span>Safety&nbsp;Match</span></a>
     <div class="navlinks">
       <a href="#shows">Shows</a>
       <a href="#music">Music</a>
@@ -169,7 +170,6 @@
   <div class="blob c"></div>
   <div class="wrap">
     <h1>SAFETY<br>MATCH</h1>
-    <div class="tag">Electro&middot;Acoustic &middot; Dance</div>
     <div class="cta">
       <a class="btn primary" href="#music">Listen</a>
       <a class="btn ghost" href="#shows">Live Dates</a>
